@@ -20,38 +20,18 @@ function getComputerChoice() {
 function playRound(computerSelection, playerSelection) {
     const computer = computerSelection
     const player = playerSelection.toLowerCase()
-    if (computer === 'rock') {
-        if (player === 'rock') {
-            return 'draw'
-        }
-        else if (player === 'scissors') {
-            return 'lose'
-        }
-        else {
-            return 'win'
-        }
+    if (computer === player) {
+        return 'draw'
     }
-    else if (computer === 'paper') {
-        if (player === 'rock') {
-            return 'lose'
-        }
-        else if (player === 'scissors') {
-            return 'win'
-        }
-        else {
-            return 'draw'
-        }
+    else if (
+    (computer == "rock" && playerSelection == "scissors") ||
+    (computer == "scissors" && playerSelection == "paper") ||
+    (computer == "paper" && playerSelection == "rock")
+    ) {
+        return 'lose'
     }
     else {
-        if (player === 'rock') {
-            return 'win'
-        }
-        else if (player === 'scissors') {
-            return 'draw'
-        }
-        else {
-            return 'lose'
-        }
+        return 'win'
     }
 }
 
