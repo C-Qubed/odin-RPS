@@ -1,4 +1,7 @@
-let numOfRounds = 5
+// use closure to enclose in displayResult?
+let playerScore = 0
+let compScore = 0
+let roundsToWin = 5
 
 function getComputerChoice() {
     // generate random decimal and multiply by 10 -- use floor to get whole num
@@ -35,25 +38,38 @@ function playRound(computerSelection, playerSelection) {
     }
 }
 
-function game() {
-    // for (let i = 0; i < numOfRounds; i++) {
-        let playerSelection = prompt('Choose your weapon: rock, scissors, or paper?');
-        let computerSelection = getComputerChoice();
-        console.log(playRound(playerSelection, computerSelection));
-    // }
+function updateScore (gameResult) {    
+    if (gameResult === 'win') {
+        playerScore++
+        const result = document.querySelector('.result > h2')
+        result.textContent = 'Result: You win!'
+        const player = document.querySelector('#player-score')
+        player.textContent = `Player Score: ${playerScore} points!`
+
+    }
+    else if (gameResult === 'lose') {
+        compScore++
+        const result = document.querySelector('.result > h2')
+        result.textContent = 'Result: You lose!'
+        const computer = document.querySelector('#computer-score')
+        computer.textContent = `Computer Score: ${compScore} points!`
+    }
+    else {
+        const result = document.querySelector('.result > h2')
+        result.textContent = 'Result: Draw...'
+    }
 }
 
-const rockBtn = document.querySelector('#rock')
-rockBtn.addEventListener('click', () => {
-    console.log(playRound(getComputerChoice(), 'rock'));
+const buttons = document.querySelectorAll('button');
+
+// on button click, play one round passing in id as string to playRound
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        let gameResult = (playRound(getComputerChoice(), button.id))
+        updateScore(gameResult)
+        checkForWin()
+    });
 });
 
-const scissorsBtn = document.querySelector('#scissors')
-rockBtn.addEventListener('click', () => {
-    console.log(playRound(getComputerChoice(), 'scissors'));
-});
 
-const paperBtn = document.querySelector('#paper')
-rockBtn.addEventListener('click', () => {
-    console.log(playRound(getComputerChoice(), 'paper'));
-});
+
