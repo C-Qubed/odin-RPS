@@ -18,8 +18,8 @@ function getComputerChoice() {
 }
 
 function playRound(computerSelection, playerSelection) {
-    const computer = computerSelection
-    const player = playerSelection.toLowerCase()
+    const computer = computerSelection;
+    const player = playerSelection.toLowerCase();
     if (computer === player) {
         return 'draw'
     }
@@ -36,9 +36,24 @@ function playRound(computerSelection, playerSelection) {
 }
 
 function game() {
-    for (let i = 0; i < numOfRounds; i++) {
-        let playerSelection = prompt('Choose your weapon: rock, scissors, or paper?')
-        let computerSelection = getComputerChoice()
-        console.log(playRound(playerSelection, computerSelection))
-    }
+    // for (let i = 0; i < numOfRounds; i++) {
+        let playerSelection = prompt('Choose your weapon: rock, scissors, or paper?');
+        let computerSelection = getComputerChoice();
+        console.log(playRound(playerSelection, computerSelection));
+    // }
 }
+
+const rockBtn = document.querySelector('#rock')
+rockBtn.addEventListener('click', () => {
+    console.log(playRound(getComputerChoice(), 'rock'));
+});
+
+const scissorsBtn = document.querySelector('#scissors')
+rockBtn.addEventListener('click', () => {
+    console.log(playRound(getComputerChoice(), 'scissors'));
+});
+
+const paperBtn = document.querySelector('#paper')
+rockBtn.addEventListener('click', () => {
+    console.log(playRound(getComputerChoice(), 'paper'));
+});
