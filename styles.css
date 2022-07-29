@@ -18,3 +18,18 @@ html, body {
     margin-left: 10em;
     margin-right: 10em;
 }
+
+.RPS {
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+    height: 250px;
+}
+
+.result {
+    background-color: #C4DFAA;
+}
+
+.footer {
+    background-color: #90C8AC;
+}
