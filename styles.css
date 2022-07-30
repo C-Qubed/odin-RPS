@@ -1,3 +1,14 @@
+/* color pallet 
+#F5F0BB
+#C4DFAA
+#90C8AC
+#73A9AD
+rgb(245, 240, 187)
+rgb(196, 223, 170)
+rgb(144, 200, 172)
+rgb(115, 169, 173)
+*/
+
 html, body {
     margin: 0;
     height: 100%;
@@ -11,12 +22,13 @@ html, body {
     align-items: center;
 }
 
-.player-choice {
+.rps-input {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-left: 10em;
     margin-right: 10em;
+    padding-bottom: 3em;
 }
 
 .RPS {
@@ -24,12 +36,72 @@ html, body {
     justify-content: space-between;
     width: 250px;
     height: 250px;
+    border-radius: 20px;
 }
 
-.result {
+.result-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #C4DFAA;
+    padding: 3em
 }
+
+.result-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+.miku {
+    width: 500px;
+    height: 500px;
+}
+.scorebox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.miku-choice {
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    width: 250px;
+    border: 5px solid turquoise;
+    border-radius: 25px;
+}
+
+.result-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+.opp-choice {
+    background-color: #eee;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    width: 250px;
+    border: 5px solid turquoise;
+    border-radius: 25px;
+    }
 
 .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #90C8AC;
+    padding-left: 5em;
+    padding-right: 5em;
 }
