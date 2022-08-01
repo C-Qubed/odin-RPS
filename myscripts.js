@@ -19,6 +19,9 @@ const playerDecision = document.getElementById('miku-RPS-choice')
 const result = document.querySelector('.result > h2')
 const rpsPlayerButtons = document.querySelectorAll('.RPS-player-input');
 const subHeading = document.querySelector('#text-result')
+let restartBtn = document.querySelector('.restart-btn')
+let modal = document.querySelector(".modal")
+let closeBtn = document.querySelector(".close-btn")
 
 
 function toTitleCase(str) {
@@ -82,43 +85,50 @@ function updateScore (gameResult) {
     else {
         result.textContent = 'Result: Draw...'
     }
+    if (playerScore >= roundsToWin || compScore >= roundsToWin) {
+        endGame()
+    }
 }
-
 
 function endGame() {
     if (playerScore >= roundsToWin) {
-        window.confirm('Congratulations -- you won! Play again?') 
+        modal.style.display = "block"
     }
     else if (compScore >= roundsToWin)
-        window.confirm('Too bad... you lost. Play again?') 
+        modal.style.display = "block"
     }
+
 
 // on button click, play one round passing in id as string to playRound
 rpsPlayerButtons.forEach((button) => {
     button.addEventListener('click', () => {
-        let gameResult = (playRound(getComputerChoice(), button.id))
-        updateScore(gameResult)
+        // check if game is over -- if it is, open the endgame modal
         if (playerScore >= roundsToWin || compScore >= roundsToWin) {
             endGame()
+        }
+        // else, play a round
+        else {
+            let gameResult = (playRound(getComputerChoice(), button.id))
+            updateScore(gameResult)
         }
     });
 });
 
-let modalBtn = document.getElementById("modal-btn")
-let modal = document.querySelector(".modal")
-let closeBtn = document.querySelector(".close-btn")
-
-modalBtn.onclick = function(){
-  modal.style.display = "block"
-}
 closeBtn.onclick = function(){
-  modal.style.display = "none"
-}
+    modal.style.display = "none"
+  }
+
 window.onclick = function(e){
   if(e.target == modal){
     modal.style.display = "none"
   }
 }
 
-
+restartBtn.onclick = function() {
+    playerScore = 0
+    compScore = 0
+    player.textContent = `Player: 0 points!`
+    computer.textContent = `Computer: 0 points!`
+    modal.style.display = 'none'
+}
 
