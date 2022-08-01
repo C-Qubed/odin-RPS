@@ -15,6 +15,11 @@ html, body {
     background: #F5F0BB;
 }
 
+.choice {
+    border: solid 5px blue;
+    border-radius: 25px;
+}
+
 .header {
     display: flex;
     flex-direction: column;
@@ -22,20 +27,34 @@ html, body {
     align-items: center;
 }
 
-.rps-input {
+.sub-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    margin-left: 10em;
-    margin-right: 10em;
+    border: 5px solid purple;
+    background-color: #C4DFAA;
+}
+
+.subheader > h2 {
+    font-size: 16px;
+}
+
+.rps-input {
+    background-color: #C4DFAA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5em;
+    padding-left: 10em;
+    padding-right: 10em;
     padding-bottom: 3em;
 }
 
 .RPS {
     display: flex;
     justify-content: space-between;
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     border-radius: 20px;
 }
 
@@ -44,7 +63,7 @@ html, body {
     justify-content: space-between;
     align-items: center;
     background-color: #C4DFAA;
-    padding: 3em
+    padding: 3em 8em;
 }
 
 .result-left {
@@ -55,15 +74,21 @@ html, body {
 }
 
 .miku {
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
+}
+
+.luka {
+    width: 300px;
+    height: 300px;
 }
 .scorebox {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    font-size: 22px;
+    font-size: 28px;
     font-weight: bold;
 }
 
@@ -73,10 +98,18 @@ html, body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 250px;
-    width: 250px;
+    height: 200px;
+    width: 200px;
     border: 5px solid turquoise;
     border-radius: 25px;
+}
+
+#player-score {
+    color: blue;
+}
+
+#computer-score {
+    color: red;
 }
 
 .result-right {
@@ -91,8 +124,8 @@ html, body {
     display: inline-block;
     justify-content: center;
     align-items: center;
-    height: 250px;
-    width: 250px;
+    height: 200px;
+    width: 200px;
     border: 5px solid turquoise;
     border-radius: 25px;
     }
@@ -105,3 +138,31 @@ html, body {
     padding-left: 5em;
     padding-right: 5em;
 }
+
+.modal {
+    display: none;
+    position: fixed; 
+    padding-top: 300px;
+    left: 0; 
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .modal-content {
+    position: relative; 
+    background-color: white;
+    padding: 50px; 
+    margin: auto; 
+    width: 30%;  
+  }
+  .close-btn {
+    float: right; 
+    color: lightgray; 
+    font-size: 24px;  
+    font-weight: bold;
+  }
+  .close-btn:hover {
+    color: darkgray;
+  }

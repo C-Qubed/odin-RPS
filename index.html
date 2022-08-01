@@ -8,40 +8,24 @@
     <title>The Odin Project RPS</title>
 </head>
 <body>
-    
+
     <div class="header">
         <h1>Play as Hatsune Miku in RPS!</h1>
-        <h2>First to 5 points wins -- choose your weapon!</h2>
     </div>
 
-    <div class="rps-input">
-        
-        <div class="rock">
-            <img class='RPS' src="images/rock.jpg" alt="rock-image">
-            <button id='rock' type="button">Rock</button>
-        </div>
-
-        <div class="scissors">
-            <img class='RPS' src="images/scissors.jpg" alt="scissors-image">
-            <button id='scissors' type="button">Scissors</button>
-        </div>
-
-        <div class="paper">
-            <img class='RPS' src="images/paper.jpg" alt="paper-image">
-            <button id='paper' type="button">Paper</button>
-        </div>
-
+    <div class="sub-header">
+        <h2 id="text-result">First to 5 points wins -- choose your weapon!</h2>
     </div>
-
+    
     <div class="result-container">
 
         <div class="result-left">
             <img class='miku' src="miku.png" alt="miku-img">
             <div class="scorebox">
                 <div class="miku-choice">
-                    <img class='RPS' src="images/paper.jpg" alt="paper-image">
+                    <img class='RPS' id="miku-RPS-choice">
                 </div>
-            <p id="player-score">Player Score: 0 points!</p>
+            <p id="player-score">Player: 0 points!</p>
             </div>
         </div>
 
@@ -49,20 +33,54 @@
             <img class="luka" src="luka.png" alt="luka-img">
             <div class="scorebox">
                 <div class="opp-choice">
-                    <img class='RPS' src="images/paper.jpg" alt="paper-image">
+                    <img class='RPS' id="opp-RPS-choice">
                 </div>
-            <p id="computer-score">Computer Score: 0 points!</p>
+            <p id="computer-score">Computer: 0 points!</p>
             </div>
         </div>
 
     </div>
     
-    <script src="myscripts.js"></script>
+    
+    <div class="rps-input">
+        
+        <div class="rock">
+            <button class='RPS-player-input' id='rock' type="button">
+                <img class='RPS choice' src="images/rock.jpg" alt="rock-image">
+            </button>
+        </div>
 
-    <div class="footer">
+        <div class="scissors">
+            <button class='RPS-player-input' id='scissors' type="button">
+                <img class='RPS choice' src="images/scissors.jpg" alt="scissors-image">
+            </button>
+        </div>
+
+        <div class="paper">
+            <button class='RPS-player-input' id='paper' type="button">
+                <img class='RPS choice' src="images/paper.jpg" alt="paper-image">
+            </button>
+        </div>
+
+    </div>
+
+    <button id="modal-btn"> click me, I make a modal</button>
+        <div class="modal">
+            <div class="modal-header">
+                <span class="close-btn">&times;</span>
+            <div class="modal-content">
+                <p>this is the text inside the modal</p>
+            </div>
+            </div>
+        </div>
+
+      <div class="footer">
         <p>Interested in more of my work? <a href="https://github.com/cam-peck?tab=repositories">Check out my Github!</a></p>
         <button class="button">Contact me!</button>
         <p>Find the images I used <a href="https://www.vecteezy.com/free-vector/rock-paper-scissors">here.</a></p>
-    </div>
+      </div>
+    
+    <script src="myscripts.js"></script>
+
 </body>
 </html>
