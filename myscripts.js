@@ -1,13 +1,3 @@
-// add stylesheet and pretty css!
-// use closure to enclose player score and rounds to win in displayResult?
-// seperate ui out from functions
-// add R/P/S images on white backgrounds (cards)
-    // light them up and slight glow (like the drumset) when playing a round
-// add to end-round function
-    // display winner
-    // should lock out all buttons
-    // play again should reset the UI
-
 let playerScore = 0
 let compScore = 0
 let roundsToWin = 5
