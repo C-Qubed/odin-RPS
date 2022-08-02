@@ -19,6 +19,7 @@ const playerDecision = document.getElementById('miku-RPS-choice')
 const result = document.querySelector('.result > h2')
 const rpsPlayerButtons = document.querySelectorAll('.RPS-player-input');
 const subHeading = document.querySelector('#text-result')
+const modalText = document.querySelector('#end-text')
 let restartBtn = document.querySelector('.restart-btn')
 let modal = document.querySelector(".modal")
 let closeBtn = document.querySelector(".close-btn")
@@ -92,9 +93,11 @@ function updateScore (gameResult) {
 
 function endGame() {
     if (playerScore >= roundsToWin) {
+        modalText.textContent = 'You win!'
         modal.style.display = "block"
     }
     else if (compScore >= roundsToWin)
+        modalText.textContent = 'You lose...'
         modal.style.display = "block"
     }
 
@@ -125,10 +128,11 @@ window.onclick = function(e){
 }
 
 restartBtn.onclick = function() {
-    playerScore = 0
-    compScore = 0
-    player.textContent = `Player: 0 points!`
-    computer.textContent = `Computer: 0 points!`
-    modal.style.display = 'none'
+    playerScore = 0;
+    compScore = 0;
+    subHeading.textContent = `First to 5 points wins -- choose your weapon!`;
+    player.textContent = `Player: 0 points!`;
+    computer.textContent = `Computer: 0 points!`;
+    modal.style.display = 'none';
 }
 

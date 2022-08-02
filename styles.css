@@ -18,6 +18,7 @@ html, body {
 .choice {
     border: solid 5px blue;
     border-radius: 25px;
+    
 }
 
 .header {
@@ -50,6 +51,7 @@ html, body {
     padding-bottom: 3em;
 }
 
+
 .RPS {
     display: flex;
     justify-content: space-between;
@@ -60,6 +62,7 @@ html, body {
 
 .result-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     background-color: #C4DFAA;
@@ -85,7 +88,6 @@ html, body {
 .scorebox {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     font-size: 28px;
@@ -121,7 +123,7 @@ html, body {
 
 .opp-choice {
     background-color: #eee;
-    display: inline-block;
+    display: flex;
     justify-content: center;
     align-items: center;
     height: 200px;
@@ -143,7 +145,7 @@ html, body {
     display: none;
     position: fixed; 
     padding-top: 250px;
-    left: 0px; 
+    left: 0; 
     top: 0;
     width: 100%;
     height: 100%; 
@@ -153,12 +155,13 @@ html, body {
 
 .modal-header {
     border: 5px solid turquoise;
+    border-radius: 15px;
     position: absolute; 
     background-color: #90C8AC; 
-    margin-left: 500px; 
-    width: 25%;  
-    height: 25%;
-    font-size: 24px;
+    margin-left: 23em;
+    width: 20%;  
+    height: 20%;
+    font-size: 30px;
     text-align: center;
 }
 
@@ -174,6 +177,13 @@ html, body {
   .restart-btn {
     width: 200px;
     height: 100px;
+    font-size: 18px;
+    border: solid blue 5px;
+    border-radius: 25px;
+  }
+
+  .restart-btn:hover {
+    color: blue;
   }
 
 .close-btn {
